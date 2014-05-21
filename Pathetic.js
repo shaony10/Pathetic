@@ -21,7 +21,22 @@ Version: 1.0.0.1
             return true;
         }
         return false;
-    }
+    };
+    
+    $.fn.overcomePatheticOrderForList = function() {
+        var patheticList = $(this);
+        var patheticListItems = $('li', patheticList).get();
+        patheticListItems.sort(function(firstPethona, secondPethona) {
+            var firstElement = $(firstPathona).text().toUpperCase();
+            var secondElement = $(secondPathona).text().toUpperCase();
+            return (firstElement < secondElement) ? -1 : 1;
+        });
+        $.each(patheticListItems, function(index, pathona) {
+            patheticList.append(pathona);
+        });
+    };
+    // How to use:    $("ul").overcomePatheticOrderForList();
+    
 })(jQuery);
 
 
